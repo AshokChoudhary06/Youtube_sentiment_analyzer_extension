@@ -41,9 +41,6 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
-os.environ["AWS_ACCESS_KEY_ID"] = "***REMOVED***"
-os.environ["AWS_SECRET_ACCESS_KEY"] = "**REMOVED**" # Modify the operating system envrionment variables 
-os.environ["AWS_DEFAULT_REGION"]  = "**REMOVED**"
 
 def load_params(path):
     try:
