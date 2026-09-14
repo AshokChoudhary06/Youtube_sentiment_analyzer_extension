@@ -87,3 +87,7 @@ target/
 
 # Mypy cache
 .mypy_cache/
+/log_model.pkl
+/experiment_info.json
+/tfidf_vectorizer.pkl
+/os.path_meaning_in_youtube_sentiment.pdf
