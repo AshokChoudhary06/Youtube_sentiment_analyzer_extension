@@ -34,8 +34,8 @@ def preprocess_data(comment):
         comment  = re.sub(r'\n',' ', comment)
 
         en_stop_words = set(stopwords.words('english'))
-        stop_word_french = set(stopwords.words('French'))
-        spa_stop_word = set(stopwords.words('Spanish'))
+        stop_word_french = set(stopwords.words('french'))
+        spa_stop_word = set(stopwords.words('spanish'))
         arab_stop_word = set(stopwords.words('arabic'))
         bengal_stop_word = set(stopwords.words('bengali'))
         russ_stop_word = set(stopwords.words('russian'))
