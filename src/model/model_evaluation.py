@@ -1,5 +1,6 @@
 import pandas as pd 
 from sklearn.metrics import accuracy_score , classification_report, confusion_matrix 
+from dotenv import load_dotenv
 import mlflow
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -41,6 +42,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
+load_dotenv()
 
 def load_params(path):
     try:
