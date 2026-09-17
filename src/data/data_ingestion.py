@@ -25,7 +25,7 @@ def load_data(url : str) -> pd.DataFrame:
     """ Load data from a CSV file"""
     try:
         logger.debug("Starting to load the data")
-        df = pd.read_csv(url)
+        df = pd.read_csv(url, on_bad_lines= 'skip')
         logger.debug("The Data has been loaded succesfully")
         return df
     except pd.errors.ParserError as e:
