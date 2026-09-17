@@ -1,6 +1,9 @@
 name : CICD Pipeline 
 
-on:push
+on:
+  push:
+    branches:
+      - master 
 
 jobs:
   model_deployment:
@@ -13,13 +16,13 @@ jobs:
       - name: Set up Python 
         uses: actions/setup-python@v4
         with:
-          python-version: '3.14'
+          python-version: '3.10'
         
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.cache.pip
-          key: ${{ runner.os }}-pip-{{ hashFiles(requirements.txt) }}
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles(requirements.txt) }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
@@ -29,7 +32,7 @@ jobs:
           
       - name : Run pipeline
         env :
-          AWS_ACCESS_KEY_ID : ${{ secrets.AWAS_aCCESS_KEY_ID }}
+          AWS_ACCESS_KEY_ID : ${{ secrets.AWAS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY : ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION : ${{ secrets.AWS_DEFAULT_REGION }}
         run : |
