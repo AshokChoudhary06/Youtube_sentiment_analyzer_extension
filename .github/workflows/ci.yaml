@@ -65,3 +65,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run : |
           git push origin {{ github.ref_name }}
+
+      - name : install pytest
+        run : |
+          pip install pytest
+
+      - name : Load model test 
+        run : | 
+          pytest scripts/test_model_load.py
+
+          
+         
