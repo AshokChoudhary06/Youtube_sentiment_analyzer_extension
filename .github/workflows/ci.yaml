@@ -60,7 +60,7 @@ jobs:
           git commit -m "Auto commit of dvc outputs and updated code" 
 
       - name : Push to github
-        if: ${{ gitghub.actor == 'github.actions[bot]' }}
+        if: ${{ github.actor == 'github-actions[bot]' }}
         env : 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run : |
