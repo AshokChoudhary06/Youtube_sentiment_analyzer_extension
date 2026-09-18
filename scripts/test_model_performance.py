@@ -3,11 +3,12 @@ import mlflow
 import pandas as pd 
 from mlflow.tracking import MlflowClient
 import pytest 
+from sklearn.metrics import accuracy_score , precision_score, recall_score, f1_score
 
 mlflow.set_tracking_uri("http://16.171.44.208:8000/")
 
 @pytest.mark.parametrize("model_name, stage, holdout_data_path, vectorizer_path", [
-    ("yt_chrome_plugin_model", "staging", "data/interim/test_processed.csv", "tfidf_vectorizer.pkl"),  # Replace with your actual paths
+    ("yt_chrome_plugin_model", "staging", "data/interim/preprocessed_test.csv", "tfidf_vectorizer.pkl"),  # Replace with your actual paths
 ])
 def test_model_performance(model_name, stage, holdout_data_path, vectorizer_path):
     try:
