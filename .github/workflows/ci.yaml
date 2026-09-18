@@ -82,8 +82,12 @@ jobs:
         run : | 
           pytest scripts/test_model_performance.py
 
+      - name : Test Fast api endpoints
+        run : |
+          pytest scripts/test_flask_api.py
+
       - name : Promote model to production 
         if: success()
         run : |
           python scripts/promote_model.py
-          
+      
