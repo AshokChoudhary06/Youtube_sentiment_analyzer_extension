@@ -9,7 +9,8 @@ def test_predict_endpoint():
         "comment" :["These is the good video", "I hate watching samuel and her together"]
     }
 
-    response = client.post(f"/predict" , json = data)
+    with TestClient(app) as client:
+        response = client.post(f"/predict" , json = data)
 
     assert response.status_code == 200 , "Api failed to process the prediction"
     assert isinstance(response.json(),  list)
@@ -18,7 +19,9 @@ def test_generate_cloud():
     data = {
         "comment": ["Love this!", "Not so great.", "Absolutely amazing!", "Horrible experience."]
     }
-    response = client.post(f"/generate_wordcloud", json=data)
+
+    with TestClient(app) as client:
+        response = client.post(f"/generate_wordcloud", json=data)
     assert response.status_code == 200 , "Wordcloud generation Failed"
     assert response.headers["Content-Type"] == "image/png", "The response is not the png file"
 
@@ -30,6 +33,8 @@ def test_generate_heat_map():
             {"text": "Very helpful tutorial.", "date": "2023-11-10T09:15:00Z"}
         ]
     }
-    response = client.post(f"/generate_heatmap", json= payload)
+
+    with TestClient(app) as client:
+        response = client.post(f"/generate_heatmap", json= payload)
     assert response.status_code == 200  , "heat_map generation failed"
     assert response.headers["Content-Type"] == "image/png" , "the response is not png file"
