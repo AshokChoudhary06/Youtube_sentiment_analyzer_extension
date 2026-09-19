@@ -16,7 +16,7 @@ def test_predict_endpoint():
 
 def test_generate_cloud():
     data = {
-        "comments": ["Love this!", "Not so great.", "Absolutely amazing!", "Horrible experience."]
+        "comment": ["Love this!", "Not so great.", "Absolutely amazing!", "Horrible experience."]
     }
     response = client.post(f"/generate_wordcloud", json=data)
     assert response.status_code == 200 , "Wordcloud generation Failed"
