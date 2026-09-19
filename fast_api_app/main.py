@@ -20,6 +20,9 @@ import io
 
 load_dotenv()
 
+CURR_DIREC = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(CURR_DIREC)
+
 @asynccontextmanager
 async def load_model(app: FastAPI):
     try:
@@ -27,7 +30,7 @@ async def load_model(app: FastAPI):
         mlflow.set_tracking_uri("http://16.171.44.208:8000/")
         model_path = f"models:/yt_chrome_plugin_model/1"
         app.state.model = mlflow.pyfunc.load_model(model_path)
-        app.state.vectorizer = joblib.load("../tfidf_vectorizer.pkl")
+        app.state.vectorizer = joblib.load(ROOT_DIR,"tfidf_vectorizer.pkl")
         yield
         print("Shutting the server and clearing memory")
         del app.state.model
