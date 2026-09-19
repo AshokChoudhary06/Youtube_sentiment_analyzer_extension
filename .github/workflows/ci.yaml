@@ -83,8 +83,10 @@ jobs:
           pytest scripts/test_model_performance.py
 
       - name : Test Fast api endpoints
+        env :
+          PYTHONPATH: .   
         run : |
-          pytest scripts/test_fast_api_endpoint.py
+          pytest scripts/test_fast_api_endpoints.py
 
       - name : Promote model to production 
         if: success()
