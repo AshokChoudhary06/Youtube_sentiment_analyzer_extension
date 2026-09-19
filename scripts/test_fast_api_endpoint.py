@@ -6,7 +6,7 @@ client = TestClient(app)
 
 def test_predict_endpoint():
     data  = {
-        "comments" :["These is the good video", "I hate watching samuel and her together"]
+        "comment" :["These is the good video", "I hate watching samuel and her together"]
     }
 
     response = client.post(f"/predict" , json = data)
