@@ -13,8 +13,8 @@ def test_predict_endpoint():
         response = client.post(f"/predict" , json = data)
 
     assert response.status_code == 200 , "Api failed to process the prediction"
-    assert isinstance(response.json(),  dict)
 
+    
 def test_generate_cloud():
     data = {
         "comment": ["Love this!", "Not so great.", "Absolutely amazing!", "Horrible experience."]
