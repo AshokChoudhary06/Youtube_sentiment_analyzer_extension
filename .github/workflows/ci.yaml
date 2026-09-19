@@ -86,7 +86,7 @@ jobs:
         env :
           PYTHONPATH: .   
         run : |
-          pytest scripts/test_fast_api_endpoints.py
+          pytest scripts/test_fast_api_endpoint.py
 
       - name : Promote model to production 
         if: success()
