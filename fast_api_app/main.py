@@ -108,12 +108,8 @@ def predict(data : Cleancomment):
         vectorized_comments  = app.state.vectorizer.transform(cleaned_comments)
         feature_names = app.state.vectorizer.get_feature_names_out()
 
-        vectorized_df = pd.DataFrame(
-            vectorized_comments.toarray(),
-            columns = feature_names
-        )
 
-        prediction = app.state.model.predict(vectorized_df).tolist()
+        prediction = app.state.model.predict(vectorized_comments.toarray()).tolist()
 
         prediction = [str(pred) for pred in prediction]
         total_comments = len(data.comment)
