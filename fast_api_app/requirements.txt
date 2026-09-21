@@ -1,0 +1,14 @@
+fastapi==0.141.1
+scikit-learn==1.5.0
+joblib==1.6.0
+matplotlib==3.11.2
+mlflow==3.0.1
+nltk==3.10.3
+pandas==2.2.3
+pydantic==2.13.5
+python-dotenv==1.2.3
+regex==2026.9.10
+seaborn==0.13.2
+wordcloud==1.9.6
+boto3
+numpy 
