@@ -1,0 +1,46 @@
+32.3 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+432.5 
+432.5 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+432.5 [notice] To update, run: pip install --upgrade pip
+------
+Dockerfile:14
+--------------------
+  12 |     COPY tfidf_vectorizer.pkl /app/tfidf_vectorizer.pkl
+  13 |     
+  14 | >>> RUN pip install --default-timeout=1000 --no-cache-dir -r requirements.txt
+  15 |     RUN python -m nltk.downloader stopwords wordnet
+  16 |     
+--------------------
+ERROR: failed to build: failed to solve: error committing yrftgkltpevj1ek8sked5bojf: write /var/lib/docker/buildkit/containerd-overlayfs/metadata_v2.db: read-only file system
+
+running wslexec: An error occurred while running the command. DockerDesktop/Wsl/ExecError: c:\windows\system32\wsl.exe -d docker-desktop -u root -e wsl-bootstrap run --base-image /c/users/<user>/appdata/local/programs/dockerdesktop/resources/docker-desktop.iso --cli-iso /c/users/<user>/appdata/local/programs/dockerdesktop/resources/wsl/docker-wsl-cli.iso --data-disk 57c123e1-c365-0f4a-8181-a8bc024c27a6: exit status 1 (stderr: [2026-09-24T14:21:41.094303106Z][wsl-bootstrap.version][W] failed to read component versions: open /opt/docker-desktop/componentsVersion.json: no such file or directory
+[2026-09-24T14:21:41.096272206Z][wsl-bootstrap] provisioning data via data disk with id: 57c123e1-c365-0f4a-8181-a8bc024c27a6
+[2026-09-24T14:21:41.097585806Z][wsl-bootstrap] pre-bootstrap complete
+[2026-09-24T14:21:41.249982010Z][wsl-bootstrap] detected no file system. Formatting
+[2026-09-24T14:21:41.273720911Z][wsl-bootstrap][W] unprovisioning data: unmounting disk: invalid argument
+Error: preparing environment: provisioning data: preparing block device /dev/sde: formatting disk: running mkfs: exit status 1
+mke2fs 1.47.3 (8-Jul-2025)
+mkfs.ext4: No such device or address while trying to determine filesystem size
+
+[2026-09-24T14:21:41.275789911Z][wsl-bootstrap][F] preparing environment: provisioning data: preparing block device /dev/sde: formatting disk: running mkfs: exit status 1
+mke2fs 1.47.3 (8-Jul-2025)
+mkfs.ext4: No such device or address while trying to determine filesystem size
+[main.main()
+[	linuxkit/pkg/desktop/wsl-bootstrap/main.go:66 +0x13c
+, stdout: , wslErrorCode: DockerDesktop/Wsl/ExecError)
+
+unning wslexec: An error occurred while running the command. DockerDesktop/Wsl/ExecError: c:\windows\system32\wsl.exe -d docker-desktop -u root -e wsl-bootstrap run --base-image /c/users/<user>/appdata/local/programs/dockerdesktop/resources/docker-desktop.iso --cli-iso /c/users/<user>/appdata/local/programs/dockerdesktop/resources/wsl/docker-wsl-cli.iso --data-disk 57c123e1-c365-0f4a-8181-a8bc024c27a6: exit status 1 (stderr: [2026-09-24T14:29:50.095457212Z][wsl-bootstrap.version][W] failed to read component versions: open /opt/docker-desktop/componentsVersion.json: no such file or directory
+[2026-09-24T14:29:50.101296212Z][wsl-bootstrap] provisioning data via data disk with id: 57c123e1-c365-0f4a-8181-a8bc024c27a6
+[2026-09-24T14:29:50.101967812Z][wsl-bootstrap] pre-bootstrap complete
+[2026-09-24T14:29:50.284364210Z][wsl-bootstrap] detected no file system. Formatting
+[2026-09-24T14:29:50.366715109Z][wsl-bootstrap][W] unprovisioning data: unmounting disk: invalid argument
+Error: preparing environment: provisioning data: preparing block device /dev/sde: formatting disk: running mkfs: exit status 1
+mke2fs 1.47.3 (8-Jul-2025)
+mkfs.ext4: No such device or address while trying to determine filesystem size
+
+[2026-09-24T14:29:50.368253609Z][wsl-bootstrap][F] preparing environment: provisioning data: preparing block device /dev/sde: formatting disk: running mkfs: exit status 1
+mke2fs 1.47.3 (8-Jul-2025)
+mkfs.ext4: No such device or address while trying to determine filesystem size
+[main.main()
+[	linuxkit/pkg/desktop/wsl-bootstrap/main.go:66 +0x13c
+, stdout: , wslErrorCode: DockerDesktop/Wsl/ExecError)

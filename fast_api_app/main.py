@@ -28,7 +28,7 @@ async def load_model(app: FastAPI):
     try:
 
         mlflow.set_tracking_uri("http://16.171.44.208:8000/")
-        model_path = f"models:/yt_chrome_plugin_model/1"
+        model_path = "models:/yt_chrome_plugin_model/24"
         app.state.model = mlflow.sklearn.load_model(model_path)
         app.state.vectorizer = joblib.load(os.path.join(ROOT_DIR,"tfidf_vectorizer.pkl"))
         yield

@@ -135,7 +135,7 @@ def main():
 
     try:
         mlflow.set_tracking_uri('http://16.171.44.208:8000')
-        mlflow.set_experiment('final_evaluation_log')
+        mlflow.set_experiment('final_evaluation')
 
         with mlflow.start_run() as run:
 
@@ -166,7 +166,8 @@ def main():
                 model,
                 "log_model",
                 signature=signature,
-                input_example=input_example
+                input_example=input_example,
+                serialization_format="cloudpickle"
             )
 
             model_path = "log_model"
