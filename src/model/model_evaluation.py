@@ -135,7 +135,7 @@ def main():
 
     try:
         mlflow.set_tracking_uri('http://16.171.44.208:8000')
-        mlflow.set_experiment('final_evaluation')
+        mlflow.set_experiment('final_evaluation_log')
 
         with mlflow.start_run() as run:
 
@@ -162,16 +162,16 @@ def main():
             # Infer the signature
             signature = infer_signature(input_example, model.predict(X_test_tfidf[:5]))
 
+            model_path = "log_model_1"
             mlflow.sklearn.log_model(
                 model,
-                "log_model",
+                model_path,
                 signature=signature,
-                input_example=input_example,
-                serialization_format="cloudpickle"
+                input_example=input_example
             )
 
-            model_path = "log_model"
-            save_model_info(run.info.run_id, model_path, 'experiment_info.json')
+            model_info_path = os.path.join(root_dir, 'experiment_info.json')
+            save_model_info(run.info.run_id, model_path, model_info_path)
 
             # Log the vectorizer as an artifact
             mlflow.log_artifact(os.path.join(root_dir, 'tfidf_vectorizer.pkl'))

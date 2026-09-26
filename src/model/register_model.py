@@ -65,7 +65,8 @@ def register_model(model_name: str, model_info: dict):
 
 def main():
     try:
-        model_info_path = 'experiment_info.json'
+        root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+        model_info_path = os.path.join(root_dir, 'experiment_info.json')
         model_info = load_model_info(model_info_path)
         
         model_name = "yt_chrome_plugin_model"
