@@ -125,7 +125,7 @@ jobs:
       - name : Upload deployment package to S3
         if : success()
         run : | 
-          aws s3 cp deployment_package.zip s3://ask_codedeploybucket/deployment_package.zip
+          aws s3 cp deployment_package.zip s3://askcodedeploybucket/deployment_package.zip
       
       - name : Deploy to AWS CodeDeploy
         if : success()
@@ -134,6 +134,6 @@ jobs:
             --application-name YtChromePlugin \ 
             --deployment-group-name YtChromePluginDeploymentGroup \ 
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --s3-location bucket=ask_codedeploybucket,key=deployment_package.zip,bundleType=zip
+            --s3-location bucket=askcodedeploybucket,key=deployment_package.zip,bundleType=zip
             --file-exists-behavior OVERWRITE
             --region eu-north-1
