@@ -93,3 +93,24 @@ jobs:
         run : |
           python scripts/promote_model.py
       
+      - name : AWS Login for ECR
+        if : success()
+        run : |
+            aws configure set access key id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws configure set secret access key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 577638368185.dkr.ecr.eu-north-1.amazonaws.com 
+
+      - name : Build docker image 
+        if : success()
+        run : | 
+            docker build -t yt-chrome-extension-1 .
+
+      - name : Tag docker image
+        if : success()
+        run : |
+            docker tag yt-chrome-extension-1:latest 577638368185.dkr.ecr.eu-north-1.amazonaws.com/yt-chrome-extension-1:v1
+
+      - name : Push docker image to ECR 
+        if : success()
+        run : |
+            docker push 577638368185.dkr.ecr.eu-north-1.amazonaws.com/yt-chrome-extension-1:v1
