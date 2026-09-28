@@ -131,9 +131,9 @@ jobs:
         if : success()
         run : |
           aws deploy create-deployment \
-            --application-name YtChromePlugin \ 
-            --deployment-group-name YtChromePluginDeploymentGroup \ 
+            --application-name YtChromePlugin \
+            --deployment-group-name YtChromePluginDeploymentGroup \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --s3-location bucket=askcodedeploybucket,key=deployment_package.zip,bundleType=zip
-            --file-exists-behavior OVERWRITE
+            --s3-location bucket=askcodedeploybucket,key=deployment_package.zip,bundleType=zip \
+            --file-exists-behavior OVERWRITE \
             --region eu-north-1
