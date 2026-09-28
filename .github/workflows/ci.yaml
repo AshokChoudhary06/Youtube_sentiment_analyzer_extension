@@ -116,3 +116,24 @@ jobs:
         if : success()
         run : |
             docker push 577638368185.dkr.ecr.eu-north-1.amazonaws.com/yt-chrome-extension-1:v1
+     
+      - name : Zip files for deployment
+        if : success()
+        run : | 
+          zip -r deployment_package.zip appspec.yml deploy scripts/install_dependencies.sh deploy/scripts/start_docker.sh
+
+      - name : Upload deployment package to S3
+        if : success()
+        run : | 
+          aws s3 cp deployment_package.zip s3://ask_codedeploybucket/deployment_package.zip
+      
+      - name : Deploy to AWS CodeDeploy
+        if : success()
+        run : |
+          aws deploy create-deployment \
+            --application-name YtChromePlugin \ 
+            --deployment-group-name YtChromePluginDeploymentGroup \ 
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --s3-location bucket=ask_codedeploybucket,key=deployment_package.zip,bundleType=zip
+            --file-exists-behavior OVERWRITE
+            --region eu-north-1
