@@ -20,5 +20,5 @@ docker rm ask-app
 fi
 
 echo "Starting new container..."
-docker run -d -p 80:5000 --name ask-app 577638368185.dkr.ecr.eu-north-1.amazonaws.com/yt-chrome-extension-1:v1
+docker run -d -p 80:8000 --name ask-app 577638368185.dkr.ecr.eu-north-1.amazonaws.com/yt-chrome-extension-1:v1
 echo "Container started successfully."
