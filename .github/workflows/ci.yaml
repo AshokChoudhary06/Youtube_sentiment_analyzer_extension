@@ -120,7 +120,7 @@ jobs:
       - name : Zip files for deployment
         if : success()
         run : | 
-          zip -r deployment_package.zip appspec.yml deploy scripts/install_dependencies.sh deploy/scripts/start_docker.sh
+          zip -r deployment_package.zip appspec.yml deploy/scripts/install_dependencies.sh deploy/scripts/start_docker.sh
 
       - name : Upload deployment package to S3
         if : success()
