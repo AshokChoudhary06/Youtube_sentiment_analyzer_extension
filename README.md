@@ -7,6 +7,7 @@ A full-stack, machine-learning-powered Chrome Extension built for YouTube.
 
 ## 🎥 See it in Action
 [![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=e_fvp09nb8Q)
+
 ![Animated Walkthrough](https://github.com/AshokChoudhary06/Youtube_sentiment_analyzer_extension/blob/master/reports/figures/308DentallyDisturbed_Stand-UpComedybyShamikChakrabarti-YouTube-ezgif.com-video-to-gif-converter.gif)
 
 ## 🌟 Features
