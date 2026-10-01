@@ -9,7 +9,7 @@ A full-stack, machine-learning-powered Chrome Extension built for YouTube.
 
 *(If you have a YouTube video, replace `YOUR_VIDEO_ID` below with your actual YouTube video ID!)*
 
-[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=e_fvp09nb8Q)
 
 
 ## 🌟 Features
