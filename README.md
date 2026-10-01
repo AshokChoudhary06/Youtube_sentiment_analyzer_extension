@@ -54,9 +54,9 @@ To ensure the highest quality predictions and reproducible model training, this 
 
 *(See screenshots of the MLflow tracking server below):*
 
-![MLflow Dashboard View 1](path/to/your/first_image.png)
+![MLflow Dashboard View 1](youtube-comment-analyzer\reports\figures\Mlflow_dashboard.png)
 
-![MLflow Run Details](path/to/your/second_image.png)
+![MLflow Run Details](youtube-comment-analyzer\reports\figures\mlflow_experiment_runs.png)
 
 ## 📥 How to Install the Chrome Extension
 
