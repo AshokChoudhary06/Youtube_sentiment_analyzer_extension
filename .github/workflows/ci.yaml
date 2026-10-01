@@ -52,7 +52,7 @@ jobs:
 
       - name : Add Changes to git 
         run : |
-          git add . 
+          git add .
 
       - name : Commit to github 
         if: ${{ github.actor == 'github-actions[bot]' }}
