@@ -7,7 +7,7 @@ A full-stack, machine-learning-powered Chrome Extension built for YouTube.
 🔗 **\[Backend Repository\]**: *(You are here)* - Contains the FastAPI, ML Ops, and AWS CI/CD Infrastructure.
 
 ## 🎥 See it in Action
-[![Watch the video](https://img.youtube.com/vi/e_fvp09nb8Q/hqdefault.jpg)](https://www.youtube.com/watch?v=e_fvp09nb8Q)
+[![Watch the video](https://www.google.com/search?sca_esv=2d383d2beb8dde80&sxsrf=APpeQns7YEKqOqMy42alt8i7mxinTEDmIA:1790854738822&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832cSpkWkfSwsmpNIrD_OQ-UcbyNc1IAMReVybHU31OS8Mih-_OhEBY7WyIpdvMaNa5psnguE5Y_M-bCsp5j5bY5RQ9rt_kZwPk4aGzLQFyTJaCvVJjWVNXyF-MuID_cvJ59yvPrXqh0ZN5B5MDMEhLpP_ZOJqPSE1hXws1FhAAig6ffZIAQ&q=logo+of+youtube&sa=X&sqi=2&ved=2ahUKEwjHybTk3ZiXAxWfd2wGHYZvEcMQtKgLegQIFhAB&biw=1366&bih=641&dpr=1#sv=CAMSURoyKhBlLTB4X2pDX01sMFhvVFNNMg4weF9qQ19NbDBYb1RTTToOMzRMTWdQU1pibDJJeE0gBCoXCgFzEhBlLTB4X2pDX01sMFhvVFNNGAEwARgHILKzrsQKSggQAhgBIAIoAQ)](https://www.youtube.com/watch?v=e_fvp09nb8Q)
 
 ![Animated Walkthrough](https://github.com/AshokChoudhary06/Youtube_sentiment_analyzer_extension/blob/master/reports/figures/308DentallyDisturbed_Stand-UpComedybyShamikChakrabarti-YouTube-ezgif.com-video-to-gif-converter.gif)
 
