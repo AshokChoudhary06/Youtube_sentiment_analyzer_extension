@@ -6,11 +6,8 @@ A full-stack, machine-learning-powered Chrome Extension built for YouTube.
 🔗 **\[Backend Repository\]**: *(You are here)* - Contains the FastAPI, ML Ops, and AWS CI/CD Infrastructure.
 
 ## 🎥 See it in Action
-
-*(If you have a YouTube video, replace `YOUR_VIDEO_ID` below with your actual YouTube video ID!)*
-
 [![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=e_fvp09nb8Q)
-
+![Animated Walkthrough](https://github.com/AshokChoudhary06/Youtube_sentiment_analyzer_extension/blob/master/reports/figures/308DentallyDisturbed_Stand-UpComedybyShamikChakrabarti-YouTube-ezgif.com-video-to-gif-converter.gif)
 
 ## 🌟 Features
 
